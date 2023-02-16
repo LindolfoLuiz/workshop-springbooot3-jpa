@@ -11,7 +11,7 @@ import jakarta.persistence.*;
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
     private String email;
@@ -28,6 +28,18 @@ public class User implements Serializable {
         this.phone = phone;
         this.password = password;
     }
+
+    public User(String name, String email, String phone, String password) {
+
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+    }
+
+
+    //public User(Long aLong, String mariaBrown, String email, String phone, String password) {
+
 
     public long getId() {
         return id;
@@ -82,3 +94,4 @@ public class User implements Serializable {
     }
 
 }
+
