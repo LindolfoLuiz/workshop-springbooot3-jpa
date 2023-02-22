@@ -1,12 +1,18 @@
 package com.educandoweb.course;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import com.educandoweb.course.entities.Order;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.persistence.Table;
+
 
 @Entity
-@Table(name = "tb+user")
+@Table(name = "tb_user")
 
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -17,6 +23,11 @@ public class User implements Serializable {
     private String email;
     private String phone;
     private String password;
+
+
+    @OneToMany(mappedBy = "client")
+    private List<Order> orders = new ArrayList<>();
+
 
     public User() {
     }
@@ -87,6 +98,10 @@ public class User implements Serializable {
         if (!(o instanceof User user)) return false;
         return id == user.id;
     }
+    public List<Order> getOrders() {
+        return orders;
+    }
+
 
     @Override
     public int hashCode() {
