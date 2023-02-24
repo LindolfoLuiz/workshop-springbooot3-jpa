@@ -1,14 +1,12 @@
-package com.educandoweb.course;
+package com.educandoweb.course.entities;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
-import com.educandoweb.course.entities.Order;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
-import jakarta.persistence.Table;
 
 
 @Entity
