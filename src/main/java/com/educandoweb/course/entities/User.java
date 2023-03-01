@@ -3,11 +3,11 @@ package com.educandoweb.course.entities;
 import com.educandoweb.course.resources.UserResource;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 
 
 @Entity
